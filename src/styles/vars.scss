@@ -1,0 +1,123 @@
+//vars
+//1.colors
+//2.size
+//3.spaces
+//4. media queries
+//5.fonts
+//6.gold border mixin
+
+//1.
+//base-colors
+$color-black:#000;
+$color-gray-dark:#222222;
+$color-gray-darker:#4a4a4a;
+$color-gray-darkest: #1A1A1A;
+$color-gray:#7C7A7A;
+$color-gray-lighter: #cccccc;
+$color-gray-lightest:#f4f4f4;
+$color-gold:#c2b16d;
+$color-white:#fff;
+
+//colors
+$main-color:$color-gray;
+$title-color:$color-gray-dark;
+$site-bg-color:$color-gray-lightest;
+$component-bg-color:$color-white;
+$our-work-hover-color: $color-gray;
+$button-hover-color: $color-gray;
+
+//2.
+$root-size:10px;
+$site-size:120rem;
+$font-size-base: 1.6rem !default;
+$font-size-xxs:   0.8rem !default;
+$font-size-xs:   1rem !default;
+$font-size-sm:   1.2rem !default;
+$font-size-md:   1.4rem !default;
+$font-size-lg:   1.6rem !default;
+$font-size-xl:   1.8rem !default;
+$font-size-xxl:  2rem !default;
+$font-size-xxxl:  2.4rem !default;
+
+$page-subtitle-size: 2.3rem !default;
+
+//3.
+
+/// Block Sizing and Spacing
+$space-pf:   0.1rem !default;
+$space-base: 0.4rem !default;
+$space-xs:   0.2rem !default;
+$space-sm:   0 !default;
+$space-md:   1.6rem !default;
+$space-lg:   2.4rem !default;
+$space-xl:   4.5rem !default;
+
+//4.
+
+$min-sm:0rem;
+$max-sm:39.9375rem;
+$min-md:40rem;
+$max-md:63.9375rem;
+$min-lg:64rem;
+$max-lg:74.9375rem;
+$min-xl:75rem;
+
+$sm-only:"(max-width: #{$max-sm})";
+$md-up:"(min-width: #{$min-md})";
+$md-max:"(max-width: #{$max-md})";
+$md-only:"(min-width: #{$min-md}) and (max-width: #{$max-md})";
+$lg-up:"(min-width: #{$min-lg})";
+$lg-only:"(min-width: #{$min-lg}) and (max-width: #{$max-lg})";
+$xl-up:"(min-width: #{$min-xl})";
+
+//5.
+$sans-serif: "helvetica", sans-serif;
+$serif: Georgia, Times, "Times New Roman", serif;
+$font-action: 'Montserrat', $sans-serif;
+
+//6.
+@mixin gold-bottom-border ($width,$height){
+  position:relative;
+  &:after{
+    position:absolute;
+    content:"";
+    width:$width;
+    bottom:-$height;
+    height:$height;
+    display:block;
+    background:$color-gold;
+    left:calc(50% - #{$width}/2);
+
+  }
+}
+
+@mixin gold-bottom-border-centered ($width,$height){
+  position:relative;
+  &:after{
+    position:absolute;
+    margin-left: ((100-$width)/2);
+    content:"";
+    width:$width;
+    bottom:-$height;
+    height:$height;
+    display:block;
+    background:$color-gold;
+  }
+}
+@mixin item-decoration {
+    overflow:hidden;
+    border: 1px solid $site-bg-color;
+      transition : border 500ms ease-out;
+      &:hover{
+          border-color: $our-work-hover-color;
+          .media{
+            transform: scale(1.05);
+          }
+      }
+      .media{
+        transition : transform 500ms ease-out;
+      }
+
+}
+//7. components height
+$header-height:8rem;
