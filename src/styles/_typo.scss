@@ -1,0 +1,63 @@
+@import "vars";
+
+//vars
+$default-bg:$color-gray-lightest;
+$default-txt-color:$color-gray;
+$default-link-color:$color-gray-dark;
+
+$default-headr-color:$color-gray-dark;
+$header-font-size:$root-size;
+$heading-scale: 4;
+
+html {
+  box-sizing: border-box;
+  font-size:$root-size;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "helvetica", sans-serif;
+  font-weight: normal;
+  font-size:$font-size-base * 0.9375;
+  line-height: 1.4;
+  color:$default-txt-color;
+  background:$default-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    @media print, screen and #{$md-up} {
+      &{
+        font-size:$font-size-base;
+        line-height: 1.25;
+      }
+    }
+  }
+
+button,
+input,
+optgroup,
+select,
+textarea,
+menu {
+  font-family: $font-action;
+}
+
+//links
+a{
+  color:$default-link-color;
+  text-decoration:none;
+  &:hover{
+    color:lighten( $default-link-color, 15% );
+    text-decoration:underline;
+  }
+}
+
+//headers (h1...)
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: athelas;
+    font-size: $header-font-size + $heading-scale * (6 - $i);
+    margin: 0.4em 0;
+    color:$default-headr-color;
+  }
+}

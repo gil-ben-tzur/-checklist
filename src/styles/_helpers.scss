@@ -1,0 +1,72 @@
+@import "vars";
+//1.text align
+//2.full width /height
+//3.align all items to same height
+//4.flex layout
+//5.padding-all-2rem-on-sm
+
+.txt-center{
+	text-align:center;
+}
+.txt-right{
+	text-align:right;
+}
+.txt-left{
+	text-align:left;
+}
+
+//2.
+.full-width{
+	width:100%;
+}
+.full-height{
+	height:100%;
+}
+
+$positions:(
+	"top",
+	"right",
+	"bottom",
+	"left",
+	);
+@each $side in $positions {
+	.padding-#{$side}-0{
+		padding-#{$side}:0;
+	}
+	.margin-#{$side}-0{
+		padding-#{$side}:0;
+	}
+}
+//3.
+.align-item-height{
+  display:flex;
+  flex-direction:row;
+  &>*{
+    flex-grow:1;
+  }
+}
+
+.flex{
+  display:flex;
+  &-row{
+    flex-direction:row;
+  }
+  &-column{
+    flex-direction:column;
+  }
+  &-shrink{
+    flex-shrink:0;
+  }
+  &-grow,&.grow-last-item>*:last-child{
+    flex-grow:1;
+  }
+  &-grow-2{
+    flex-grow:2;
+  }
+}
+//5.
+@media print, screen and #{$sm-only} {
+  .padding-2rem-on-sm{
+    padding:2rem !important;
+  }
+}
