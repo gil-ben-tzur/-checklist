@@ -1,8 +1,8 @@
-import cart from '.cart';
+import list from './list';
 import {combinReducers} from 'redux';
 
 const rootReducer = combinReducers({
-	cart
+	list
 });
 
 export default rootReducer;

@@ -168,7 +168,7 @@ module.exports = {
 	                loader: 'css-loader',
 	                options: {
 	                	modules:true,
-	                  localIdentName:'[name]__[local]__[hash:base64:5]'
+	                  localIdentName:'[local]'
 	                },
 	              },
 	              {
@@ -206,7 +206,7 @@ module.exports = {
           					modules:true,
           					sourceMap:true,
           					importLoaders:2,
-          					localIdentName:'[name]__[local]__[hash:base64:5]'
+          					localIdentName:'[local]'
           				}
           			},
           			'sass-loader'

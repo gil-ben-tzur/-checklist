@@ -1,0 +1,39 @@
+@import "vars";
+
+//vars
+
+
+.checklist{
+	background:$checklist-bg;
+	margin:0;
+	padding:$space-md/2;
+	margin:$space-md/2 0;
+	list-style:none;
+
+	legend{
+		margin-bottom:$space-base;
+		color:$color-black;
+	}
+	li{
+
+	}
+	input{
+
+	}
+	label{
+
+	}
+	input[type=checkbox]:checked + label {
+		text-decoration: line-through;
+	}
+
+}
+
+
+
+
+
+
+
+
+

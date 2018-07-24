@@ -4,7 +4,9 @@
 //3.align all items to same height
 //4.flex layout
 //5.padding-all-2rem-on-sm
-
+*{
+	box-sizing:border-box;
+}
 .txt-center{
 	text-align:center;
 }
