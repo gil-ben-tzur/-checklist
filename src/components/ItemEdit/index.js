@@ -1,12 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
-import '../../styles/item.scss'
+import '../../styles/item-edit.scss'
 import { withRouter } from 'react-router'
-const Item = (props) => (
+const ItemEdit = (props) => (
 	<div className="item">
 		<div className="item--header">
 			<span className="item--header--title">
-				title
+				<input type="text" />
 			</span>
 		</div>
 		<div className="label-list">
@@ -40,22 +40,7 @@ const Item = (props) => (
 
 		</div>
 
-		<div className="item--footer ">
-			<button className="btn btn-create">
-			create
-			</button>
-			<div className="item-menu">
-				<button className="item-menu--toggle">...</button>
-				<ul className="menu-list">
-					<li><span className="add-label">add label</span></li>
-					<li><span className="label"> label</span></li>
-					<li><span className="status on-progress">on progress</span></li>
-					<li><span className="status on-hold">on hold</span></li>
-					<li><span className="status done">done</span></li>
-					<li><span className="delete">delete</span></li>
-				</ul>
-			</div>
-		</div>
+		
 	</div>
 	)
-export default withRouter(Item);
+export default withRouter(ItemEdit)

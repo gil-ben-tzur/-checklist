@@ -1,0 +1,30 @@
+@import "vars";
+@import "button";
+@import "checklist";
+@import "progress-bar";
+@import "item-menu";
+//vars
+$item-width: 30rem;
+$item-height:40rem;
+
+//base-colors
+$color-black:#000;
+$color-gray-dark:#222222;
+$color-gray-darker:#4a4a4a;
+$color-gray-darkest: #1A1A1A;
+$color-gray:#7C7A7A;
+$color-gray-lighter: #cccccc;
+$color-gray-lightest:#f4f4f4;
+$color-gold:#c2b16d;
+$color-white:#fff;
+
+//colors
+$main-color:$color-gray;
+$title-color:$color-gray-dark;
+$site-bg-color:$color-gray-lightest;
+$item-bg-color:$color-white;
+$button-hover-color: $color-gray;
+
+.label{
+	
+}

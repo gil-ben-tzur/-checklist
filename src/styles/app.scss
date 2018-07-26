@@ -8,6 +8,24 @@
 
 
 
+html,body,#root,#root>main{
+	width:100%;
+	height:100%;
+}
+.new-item-creator{
+	margin-top:2rem;
+	width:60rem;
+	height:5rem;
+	font-size:2rem;
+	padding:0 2rem;
+}
 
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
 
-
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}

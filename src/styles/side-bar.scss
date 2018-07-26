@@ -1,0 +1,55 @@
+@import "vars";
+@import "button";
+@import "checklist";
+@import "progress-bar";
+@import "item-menu";
+//vars
+$navItemBG:$color-white;
+
+//base-colors
+$color-black:#000;
+$color-gray-dark:#222222;
+$color-gray-darker:#4a4a4a;
+$color-gray-darkest: #1A1A1A;
+$color-gray:#7C7A7A;
+$color-gray-lighter: #cccccc;
+$color-gray-lightest:#f4f4f4;
+$color-gold:#c2b16d;
+$color-white:#fff;
+
+//colors
+$main-color:$color-gray;
+$title-color:$color-gray-dark;
+$site-bg-color:$color-gray-lightest;
+$item-bg-color:$color-white;
+$button-hover-color: $color-gray;
+
+.side-bar{
+	display:flex;
+	min-width:300px;
+	height:100%;
+	flex-direction:column;
+	border-right:1px solid $color-gray-lighter;
+	&--bottom-items,&--top-items{
+		display:flex;
+		flex-direction:column;
+	}
+	&--top-items{
+		flex-grow:1;
+	}
+	.nav-item{
+		display:block;
+		width:100%;
+		padding:$space-md;
+		background:$navItemBG;
+		border-bottom:1px solid $color-gray-lighter;
+		text-decoration:none;
+		cursor:pointer;
+		&:hover{
+			background:darken($navItemBG, 2%)
+		}
+		&.active{
+			background:darken($navItemBG, 10%)
+		}
+	}
+}
