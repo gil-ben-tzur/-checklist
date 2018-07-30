@@ -34,7 +34,7 @@ class ItemEdit extends React.Component {
 						<textarea placeholder="description"/>
 						</div>
 					</div>
-
+					<button className="btn">Create</button>
 					
 				</div>
 				</DarkBG>

@@ -11,16 +11,11 @@ import './styles/app.scss'
 
 class App extends React.Component {
 
-	constructor(props){
-	   super(props);
-	   this.state = {
-	   	newItemID: 0 
-	   };
-	}
-
-
-  
+	
 	render(){
+		const {  } = this.props;
+
+		
 		
 		return(
 			<BrowserRouter>
@@ -30,7 +25,7 @@ class App extends React.Component {
 					</div>
 					<div className="column main-content">
 						<section className="row new-item-creator">
-								<Link  to={/add-item/}>gorg</Link>
+								<Link className="add-item-button"  to="/add-item">Write a note...</Link>
 						</section>
 						<section className="items-container">
 							<Routes /> 
