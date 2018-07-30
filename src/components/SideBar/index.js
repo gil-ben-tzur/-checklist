@@ -19,6 +19,11 @@ const SideBar = (props) => (
 
 			
 		</div>
+
+		    <NavLink to="/" className="nav-item" activeClassName="active" exact>home</NavLink>
+			<NavLink to="/add-item" className="nav-item" activeClassName="active" exact>add item</NavLink>
+			<NavLink to="/item" className="nav-item" activeClassName="active" exact>item</NavLink>
+			
 	</div>
 	)
 export default withRouter(SideBar)
