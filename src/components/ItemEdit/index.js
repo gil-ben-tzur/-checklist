@@ -12,7 +12,7 @@ class ItemEdit extends React.Component {
 
 	constructor(props){
 	   super(props);
-	   this.goBack = this.goBack.bind(this); // i think you are missing this
+	   this.goBack = this.goBack.bind(this); 
 	}
 	goBack(){
 	    this.props.history.goBack();
@@ -34,6 +34,7 @@ class ItemEdit extends React.Component {
 						<textarea placeholder="description"/>
 						</div>
 					</div>
+
 					<button className="btn">Create</button>
 					
 				</div>

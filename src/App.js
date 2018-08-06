@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import {BrowserRouter, withRouter, Switch, Route, Link } from 'react-router-dom';
 import Routes from './routes'
 
+import {provider} from 'react-redux';
+import store,{history} from './store';
+
 import SideBar from './components/SideBar'
 import Item from './components/Item'
 import './styles/app.scss'

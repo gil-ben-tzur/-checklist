@@ -1,9 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
-import { withRouter } from 'react-router'
+
+import _Item from '../../containers/_item'
 const Home = (props) => (
 	<div>
-	home component
+	<_Item/>
 	</div>
 	)
-export default withRouter(Home)
+export default Home

@@ -1,8 +1,11 @@
-import list from './list';
-import {combinReducers} from 'redux';
+import {combineReducers} from 'redux';
+import Item from './item';
+import Label from './labels';
 
-const rootReducer = combinReducers({
-	list
+
+const allReducers = combineReducers({
+	itemData:Item,
+	labelData:Label
 });
 
-export default rootReducer;
+export default allReducers;

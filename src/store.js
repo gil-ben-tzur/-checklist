@@ -1,5 +1,9 @@
 import {createStore} from 'redux';
-import {} from './reducers';
-export default (initialState) =>{
-	return createStore(rootReducer, initialState);
-}
+import allReducers from './reducers'
+import {provider} from 'react-redux'
+
+const store = createStore(allReducers);
+
+
+
+
