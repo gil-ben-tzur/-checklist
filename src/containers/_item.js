@@ -3,20 +3,20 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
+import _CheckList from './_checklist.js'
+
+
+
 class _Item extends Component{
-_GetKey(){
-	return this.props.item.map((data) => {
-		return data.id
-			
-	});
-}
 _GetItem(){
 	return this.props.item.map((data) => {
+		let itemName = data.title.replace(/\s+/g, '-').toLowerCase();
 		return (
-			<div className="item" key={data.id}>
+			<div className="item" key={`item-${itemName}`}>
 					<div className="item--header">
 						<span className="item--header--title">
-							<Link to={`/edit-item/${data.id,data.title}`}>{data.title}</Link>
+							<Link to={`/edit-item/${itemName}`}>{data.title}</Link>
+							
 						</span>
 					</div>
 					<div className="label-list">
@@ -30,28 +30,10 @@ _GetItem(){
 						</div>
 						{
 							data.isList ?
-
-							<div className="item--body--checklist">
-								<ul className="checklist">
-								    <legend>Check these out</legend>
-				    				<li><input id="checkbox1" type="checkbox" /><label htmlFor="checkbox1">Checkbox 1</label></li>
-				   					<li><input id="checkbox2" type="checkbox" /><label htmlFor="checkbox2">Checkbox 2</label></li>
-				    				<li><input id="checkbox3" type="checkbox" /><label htmlFor="checkbox3">Checkbox 3</label></li>
-				  				</ul>
-				  				<div className="progress-bar">
-									<div className="progress-bar--status"> 
-										<span>5</span> off <span>10</span> complited!
-									</div>
-									<div className="progress-bar--bg">
-										<div className="progress-bar--fill"></div>
-									</div>
-								</div>
-							</div>	
+							<_CheckList itemID={`${data.id}`} />
 							:
 							null
 						}
-						
-						
 					</div>
 				
 			<div className="item--footer">
@@ -75,18 +57,16 @@ _GetItem(){
 	});
 }
 
+	
 	render (){
 		return(
 			<div className="items" >
-			   {this._GetItem()}
+
+
+
+			   {this._GetItem()};
 			</div>
-			
 
-			
-
-
-				
-			
 		);
 	}
 }

@@ -15,9 +15,16 @@ export default function(){
 	},
 	{
 		id:2,
-		title:"gil2",
+		title:"Gil Two item list",
 		description:"item 2 description",
-		isList:true
+		isList:true,
+		listItems:[
+			{checked:false,listIndex:1,listContent:"list one"},
+			{checked:false,listIndex:2,listContent:"list 2"},
+			{checked:false,listIndex:3,listContent:"list 3"},
+			]
+		
+      
 		/*status:{
 			onProgress:true,
 			onHold:false,
@@ -29,7 +36,7 @@ export default function(){
 		id:3,
 		title:"gil3",
 		description:"item 3 description",
-		isList:true
+		isList:false
 		/*status:{
 			onProgress:true,
 			onHold:false,
