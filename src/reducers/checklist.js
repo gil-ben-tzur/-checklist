@@ -15,7 +15,7 @@ export default function(){
 		,
 		{
 			id:3,
-			checked:false,
+			checked:true,
 			listContent:"list 3"
 		}
 	]
