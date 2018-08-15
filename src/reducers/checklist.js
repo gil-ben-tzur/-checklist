@@ -4,12 +4,12 @@ export default function(){
 	return[
 		{   
 			id:1,
-			checked:false,
+			checked:true,
 			listContent:"list 1"
 		},
 		{
 			id:2,
-			checked:false,
+			checked:true,
 			listContent:"list 2"
 			}
 		,

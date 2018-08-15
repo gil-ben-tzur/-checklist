@@ -4,15 +4,16 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
-import checkToggle from '../actions/checklist-action.js'
+import {selectLI} from '../actions/checklist.js'
 
 
 class _CheckList extends Component{
 	_GetList(){
 		return this.props.check.map((data) => {
 			return (
-				<li key={`itemCheck-${data.id}`}>
-					<input onClick={()=>this.props.checkToggle(true)} id={`itemIndex-${data.id}`} type="checkbox" />
+				<li checked={data.checked}  onClick={()=> this.props.selectLI(data.checked != data.checked)}
+				key={`itemCheck-${data.id}`}>
+					<input  id={`itemIndex-${data.id}`} type="checkbox" />
 					<label htmlFor={`itemIndex-${data.id}`}>{data.listContent}</label>
 				</li>
 				);	
@@ -59,11 +60,13 @@ class _CheckList extends Component{
 
 function mapStateToProps(state){
 	return{
-		check:state.checkListData
+		check:state.checkListData,
+		checkActive:state.checkListA
 	}
 }
 
 function matchDispatchToProps(dispatch){
-	return bindActionCreators({checkToggle:checkToggle},dispatch)
+	return bindActionCreators({selectLI:selectLI},dispatch);
 }
+
 export default connect(mapStateToProps, matchDispatchToProps)(_CheckList)  				
