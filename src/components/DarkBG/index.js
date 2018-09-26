@@ -27,5 +27,4 @@ class DarkBG extends React.Component{
 	};
 }
 	
-	
 export default withRouter(DarkBG)

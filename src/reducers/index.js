@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
-import Item from './item';
+import AddItem from './add-item';
 import Label from './labels';
 import CheckList from './checklist';
 import CheckListActive from './checklist-active';
 
 const allReducers = combineReducers({
-	itemData:Item,
+	additem:AddItem,
 	checkListData:CheckList,
 	checkListA:CheckListActive,
 	labelData:Label

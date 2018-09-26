@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 class NoMatch extends React.Component{
 	render(){
 		return
-				<div>NoMatch</div>
+				<div>404 NoMatch</div>
 			  
 	}
 }

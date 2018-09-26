@@ -1,10 +1,12 @@
-import React from 'react'
-import classNames from 'classnames'
 
-import _Item from '../../containers/_item'
-const Home = (props) => (
-	<div>
-	<_Item/>
-	</div>
-	)
+
+import React from 'react'
+import PropTypes from 'prop-types'
+import Item from '../Item'
+
+const Home = () => (
+ <div> <Item/>home 111</div>
+)
+
+
 export default Home

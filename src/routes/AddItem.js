@@ -1,3 +1,7 @@
 import React from 'react'
-import ItemEdit from '../components/ItemEdit'
-export default () => <div>item ItemEdit<ItemEdit /></div>
+import _AddItem from '../containers/_addItem'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+
+export default () => <div> <_AddItem /></div>
