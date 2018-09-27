@@ -1,6 +1,7 @@
 let nextTodoId = 0
-export const addItem = text => ({
+export const addItem = title => ({
   type: 'ADD_ITEM',
   id: nextTodoId++,
-  text
+  title
+
 })
