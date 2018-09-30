@@ -8,7 +8,6 @@ const additem = (state = [], action) => {
           title: action.title,
         }
       ]
-    
     default:
       return state
   }

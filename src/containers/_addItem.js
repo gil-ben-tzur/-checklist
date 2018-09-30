@@ -2,8 +2,9 @@ import React, {component}from 'react'
 import { connect } from 'react-redux'
 import { addItem } from '../actions/'
 import DarkBG from '../components/DarkBG'
-import '../styles/item-edit.scss'
 import _Items from'./_items'
+import '../styles/item-edit.scss'
+
 const _AddItem = ({ dispatch }) => {
   let title
 
@@ -14,11 +15,11 @@ const _AddItem = ({ dispatch }) => {
       	className="add-item" 
       	onSubmit={e => {
 	        e.preventDefault()
-	        if (!title.value.trim()) {
+	        if (!title.value.trim() || title.value==='add new item') {
 	          return
 	        }
-        	dispatch(addItem(title.value))
-        	title.value = ''
+        	dispatch(addItem(title.value),console.log(title.value))
+        	title.value = 'add new item'
       		}}>
         <div className="add-item--header">
         	<span className="add-item--header--title">

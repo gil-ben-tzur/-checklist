@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 import Items from '../components/Items.js'
 
-const _items = (text) => {
-  return text
+const gorg = (items) => {
+  return items
 }
 
 const mapStateToProps = state => ({
-  additem: _items(state.additem)
+  additem: gorg(state.additem)
 })
 
 export default connect(mapStateToProps)(Items)

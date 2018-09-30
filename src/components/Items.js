@@ -1,14 +1,15 @@
 import React from 'react'
 import Item from './Item.js'
 
-const Items = ({ items }) => (
+const Items = ({ additem }) => (
+
    <ul>
-    {items.map(item =>
+
+    {additem.map(item =>
       <Item key={item.id} {...item} />
     )}
+
   </ul>
 )
-
-
 
 export default Items
