@@ -1,0 +1,68 @@
+@import "vars";
+@import "button";
+@import "checklist";
+@import "progress-bar";
+@import "item-menu";
+//vars
+
+
+.add-item{
+
+	display:flex;
+	flex-direction:column;
+	height:100%;
+	&--header{
+		width:100%;
+		margin-bottom:1rem;
+		input{
+			border:none;
+			border-bottom:1px solid $color-gray-lighter;
+			font-size:2rem;
+			padding:0.5rem;
+			width:100%;
+
+		}
+	}
+	&--body{
+		font-size:$font-size-xs;
+		border-bottom:1px solid $color-gray-lighter;
+		padding:$space-md/2 0;
+		flex-grow:1;
+	 	overflow-y: auto;
+		&--description{
+			font-style: italic;
+			textarea{
+				width:100%;
+				min-height:100px;
+				PADDING:0.5REM;
+				border:none;
+				border-bottom:1px solid $color-gray-lighter;
+			}
+		}
+	}
+	&--footer{
+		padding-top:$space-md/2;
+		display:flex;
+	}
+	.label-list{
+		font-style: italic;
+		&--item{
+			font-size:$font-size-xs ;
+			padding:$space-base;
+			background:lighten($color-gray, 45%);
+			color:$color-gray-darkest;
+			margin:$space-base;
+			display:inline-block;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+

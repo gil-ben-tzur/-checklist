@@ -37,10 +37,27 @@ $button-hover-color: $color-gray;
 
 	@include item-decoration;
 
-	&--header{
+	header{
 		border-bottom:1px solid $color-gray-lighter;
 		padding-bottom:$space-md/2;
 		margin-bottom:$space-md/2;
+		display:flex;
+		position:relative;
+		.edit-link{
+			display:block;
+			display:none;
+			height:15px;
+		}
+		.edit-icon{
+			height:100%;
+		}
+	&:hover .edit-link{
+		display:block
+
+	}
+	}
+	&--header--title{
+		flex-grow:1;
 	}
 	&--body{
 		font-size:$font-size-xs;
@@ -50,6 +67,10 @@ $button-hover-color: $color-gray;
 	 	overflow-y: auto;
 		&--description{
 			font-style: italic;
+			pre{
+				padding:0;
+				margin:0
+			}
 		}
 	}
 	&--footer{

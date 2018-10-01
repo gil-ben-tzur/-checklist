@@ -19,14 +19,12 @@ class App extends React.Component {
 			<BrowserRouter>
 				<main className="flex-container">
 					<div className="column shrink no-left-padding">
-					<SideBar></SideBar>
+					{/*<SideBar></SideBar>*/}
 					</div>
 					<div className="column main-content">
 						<section className="row new-item-creator">
-								<Link className="add-item-button"  to="/add-item">Write a note...</Link>
-
+							<Link className="add-item-button"  to="/add-item">Write a note...</Link>
 						</section>
-						
 						<section className="items-container">
 							<Routes /> 
 						</section>
