@@ -5,7 +5,6 @@ import _AddItem from '../../containers/_addItem'
 
 const Home = () => (
  <div> home 111<_Items />
-<_AddItem />
  </div>
  
 )
