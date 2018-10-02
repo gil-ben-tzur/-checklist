@@ -11,4 +11,9 @@ export const addItem = (title,description,status) => (
   status:status
 })
 
-
+export const setStatus = (id,status) => (
+{
+	type: 'SET_STATUS',
+	id,
+	status
+})

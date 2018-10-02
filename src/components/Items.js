@@ -1,5 +1,5 @@
 import React from 'react'
-import Item from './Item.js'
+import Item from '../containers/_Item.js'
 
 const Items = ({ additem }) => (
 

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 const Button = ({ classType, children, onClick }) => (
     <button
        onClick={onClick}
-       className={classNames('btn'+' '+`${classType}`)}
+       className={classNames('btn',classType)}
     >
       {children}
     </button>

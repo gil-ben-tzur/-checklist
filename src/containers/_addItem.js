@@ -1,16 +1,14 @@
 import React, {component}from 'react'
 import { connect } from 'react-redux'
 import { addItem } from '../actions/'
-import  itemStatusReducer  from '../reducers/item-status.js'
 import DarkBG from '../components/DarkBG'
 import _Items from'./_items'
 import '../styles/add-item.scss'
 import BackButton from './_backButton'
 //how to erite it smarter?
-const _AddItem = ({ dispatch }) => {
+const _AddItem = ({ dispatch,itemStatus }) => {
   let title,description;
-  let status = itemStatusReducer;
-  console.log(status,itemStatusReducer)
+  let status = itemStatus[0];
   return (
     <DarkBG>
 
@@ -21,7 +19,7 @@ const _AddItem = ({ dispatch }) => {
 	        if (!title.value.trim() || !description.value.trim()) {
 	          return
 	        }
-        	dispatch(addItem(title.value,description.value,status[0]))
+        	dispatch(addItem(title.value,description.value,status))
         	title.value = ''
           description.value = ''
           
@@ -41,5 +39,7 @@ const _AddItem = ({ dispatch }) => {
     </DarkBG>
   )
 }
-
-export default connect()(_AddItem)
+const mapStateToProps = state => ({
+  itemStatus: (state.itemStatus)
+})
+export default connect(mapStateToProps)(_AddItem)

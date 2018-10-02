@@ -12,13 +12,17 @@ const additem = (state = [], action) => {
         }
       ]
 
-      case 'ITEM_STATUS':
-      return [
-        ...state,
-        {
-          status:action.status
+      case 'SET_STATUS':
+      return state.map((item) => {
+        if (item.id === action.id) {
+          return {
+            ...item,
+            status: action.status
+          }
+        } else {
+          return item
         }
-      ]
+      })
 
     default:
       return state
