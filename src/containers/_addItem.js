@@ -1,6 +1,7 @@
 import React, {component}from 'react'
 import { connect } from 'react-redux'
 import { addItem } from '../actions/'
+import  itemStatusReducer  from '../reducers/item-status.js'
 import DarkBG from '../components/DarkBG'
 import _Items from'./_items'
 import '../styles/add-item.scss'
@@ -8,7 +9,8 @@ import BackButton from './_backButton'
 //how to erite it smarter?
 const _AddItem = ({ dispatch }) => {
   let title,description;
-  
+  let status = itemStatusReducer;
+  console.log(status,itemStatusReducer)
   return (
     <DarkBG>
 
@@ -19,9 +21,10 @@ const _AddItem = ({ dispatch }) => {
 	        if (!title.value.trim() || !description.value.trim()) {
 	          return
 	        }
-        	dispatch(addItem(title.value,description.value))
+        	dispatch(addItem(title.value,description.value,status[0]))
         	title.value = ''
           description.value = ''
+          
       		}}>
 
             <div className="add-item--header">

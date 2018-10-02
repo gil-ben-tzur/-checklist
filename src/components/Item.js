@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
-import _StatusButton from '../containers/_statusButtons'
+import Button from './Button'
 import '../styles/item.scss'
-const Item = ({ title,description,itmurl,onClick,item,itemStstus,dispatch}) => (
+const Item = ({ title,description,itmurl,onClick,status}) => (
   <li className="item">
 	  <header>
 	  	<span className="item--header--title">{title}</span>
@@ -14,12 +14,9 @@ const Item = ({ title,description,itmurl,onClick,item,itemStstus,dispatch}) => (
 	  <div className="item--body">
 	  	<div className="item--body--description"> <pre>{description}</pre></div>
 	  </div>
-
-	  {/*<div className={classNames('item-status'+' '+`${itemStstus}`)}>
-	  	  	 <button onclick={onClick} className="btn on-p">on progress</button>
-	  	  	 <button onclick={onClick} className="btn on-h">on hold</button>
-	  	  	 <button onclick={onClick} className="btn done">done</button>
-	  	  </div>*/}
+	  <div className={classNames('item-status'+' '+`${status}`)}>
+	  	  	 <Button >on progress</Button>
+	  	  </div>
   </li>
   
 )

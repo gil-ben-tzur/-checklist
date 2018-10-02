@@ -1,6 +1,6 @@
 let nextTodoId = 0 
-
-export const addItem = (title,description,itemStstus) => (
+    
+export const addItem = (title,description,status) => (
 
 {
   type: 'ADD_ITEM',
@@ -8,7 +8,7 @@ export const addItem = (title,description,itemStstus) => (
   itmurl:title.replace(/\s/g,'_'),
   title,
   description,
-  itemStstus:["on-progress","on-hold","done"]
+  status:status
 })
 
 
