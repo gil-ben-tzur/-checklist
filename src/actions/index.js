@@ -17,3 +17,10 @@ export const setStatus = (id,status) => (
 	id,
 	status
 })
+
+export const deleteItem = (id) => (
+{
+	type: 'DELETE_ITEM',
+	id,
+	
+})

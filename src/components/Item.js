@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 import Button from './Button'
+import DarkBG from './DarkBG'
 import '../styles/item.scss'
 
 class Item extends React.Component{
@@ -9,10 +10,21 @@ class Item extends React.Component{
     handleClick(id, status) {
 	  this.props.setStatus(id, status)
 	}
+	handleDelete(id) {
+		let conf = window.confirm("Are you sure you want to delete"+" "+ '"' +this.props.title+ '"' +"?");
+	  if (conf){
+	  	this.props.deleteItem(id)
+	  }
+
+	}
+
+
 	render(){
 		const {title,description,itmurl,status,setStatus,id,itemStatus} = this.props;
+		let currntStatus = status.replace("-"," ");
 		return(
-			<li className="item">
+			<li className={classNames("item",status)}>
+				  <button className="delete" onClick={this.handleDelete.bind(this,id)}>X</button>
 				  <header>
 				  	<span className="item--header--title">{title}</span>
 				  	{/*<Link className="edit-link" to={`/edit-item/${itmurl}`}>
@@ -22,11 +34,19 @@ class Item extends React.Component{
 				  <div className="item--body">
 				  	<div className="item--body--description"> <pre>{description}</pre></div>
 				  </div>
-				  <div className={classNames('item-status',status)}>
-				  	  	 <Button onClick={this.handleClick.bind(this,id,itemStatus[0])}>on progress</Button>
-				  	  	 <Button onClick={this.handleClick.bind(this,id,itemStatus[1])}>on hold</Button>
-				  	  	 <Button onClick={this.handleClick.bind(this,id,itemStatus[2])}>done</Button>
+				  <footer>
+				  	  <div className="item-menu">
+				  	  		<button className="btn item-menu--toggle">{currntStatus}</button>
+				  	  		<ul className={classNames("menu-list",status)}>
+								<li><span className="status on-progress" onClick={this.handleClick.bind(this,id,itemStatus[0])}>on progress</span></li>
+								<li><span className="status on-hold" onClick={this.handleClick.bind(this,id,itemStatus[1])}>on hold</span></li>
+								<li><span className="status done" onClick={this.handleClick.bind(this,id,itemStatus[2])}>done</span></li>
+								
+				  	  		</ul>
+
 				  	  </div>
+					  
+				  </footer>
 			  </li>
 			)
 	}

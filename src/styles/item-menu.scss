@@ -4,25 +4,20 @@
 
 
 .item-menu{
-	width:30px;
-	height:30px;
 	margin-left:auto;
 	overflow:visible;
 	position:relative;
+	display:inline-block;
 
 	&--toggle{
 		border:none;
-		width:100%;
-		height:100%;
-		font-size:20px;
-		letter-spacing:-1px;
 		cursor:pointer;
 	}
 	.menu-list{
 		width:150px;
 		padding:0;
 		list-style:none;
-
+		display:none;
 		height:auto;
 		background:$color-white;
 		position:absolute;
@@ -44,6 +39,11 @@
 					background:darken($color-white, 5%)
 				}
 			}
+		}
+	}
+	&:hover{
+		.menu-list{
+			display:block;
 		}
 	}
 }

@@ -23,7 +23,10 @@ const additem = (state = [], action) => {
           return item
         }
       })
-
+      case 'DELETE_ITEM':
+      return state.filter((item)=>
+              item.id !== action.id
+            )
     default:
       return state
   }

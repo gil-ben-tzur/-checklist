@@ -31,7 +31,7 @@ $button-hover-color: $color-gray;
 	max-height:$item-height;
 	padding:$space-md;
 	margin:$space-md;
-	
+	position:relative;
 	display:inline-flex;
 	flex-direction:column;
 
@@ -73,7 +73,7 @@ $button-hover-color: $color-gray;
 			}
 		}
 	}
-	&--footer{
+	footer{
 		padding-top:$space-md/2;
 		display:flex;
 	}
@@ -88,8 +88,28 @@ $button-hover-color: $color-gray;
 			display:inline-block;
 		}
 	}
-
+	.delete{
+		width: 25px;
+    height: 25px;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    display:none;
+	}
+	&:hover{
+		.delete{
+			display:block;
+		}
+	}
+	&.on-progress{}
+	&.on-hold{background:$color-gray-lightest}
+	&.done{background:$checklist-bg}
 }
+
 
 
 
